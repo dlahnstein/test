@@ -1,0 +1,31 @@
+---
+# Items that apply to ALL profiles:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: ${PORT:${SERVER_PORT:0}}   # Select any available port if neither port nor server port are specified.
+
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://192.168.0.20;databaseName=rvdb_contract
+    username: sa
+    password: dL951sTonE
+    platform: mssql
+    initialize: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.SQLServer2008Dialect
+      
+---
+spring:
+  profiles: default
+server:
+  port: 8110  
+
+
+      

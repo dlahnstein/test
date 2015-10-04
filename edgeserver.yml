@@ -1,0 +1,27 @@
+---
+# Items that apply to ALL profiles:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.99.100:8761/eureka/
+server:
+  port: 8765
+  
+info:
+  component: Edge Server
+
+#zuul:
+#  ignoredServices: "*"
+#  prefix: /api
+#  routes:
+#   product: /product/**
+---
+spring:
+  profiles: dev
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.99.100:8761/eureka/
+  instance:
+    hostname: 192.168.99.100      
+    
